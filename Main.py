@@ -51,5 +51,3 @@ if __name__ == '__main__':
 # generate sum of pos dict values
 # generate sum of neg dict values
 # generate unique vocabulay of combined lists
-
-

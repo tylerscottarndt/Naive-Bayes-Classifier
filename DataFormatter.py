@@ -76,5 +76,3 @@ class DataFormatter:
         pickle_out = open(file_name, "wb")
         pickle.dump(object_to_pickle, pickle_out)
         pickle_out.close()
-
-
