@@ -42,12 +42,18 @@ if __name__ == '__main__':
         print("You saved the formatted data, please run again for the Naive Bayes classifier.")
         sys.exit()
 
+    # instantiate naive_bayes object
     naive_bayes = NaiveBayesClassifier(data_files)
-    naive_bayes.generate_vocabulary(0, 1000)
-    print(len(naive_bayes.vocabulary))
 
-# generate pos dict
-# gnerate neg dict
-# generate sum of pos dict values
-# generate sum of neg dict values
-# generate unique vocabulay of combined lists
+    # generate vocabulary of words
+    naive_bayes.generate_vocabulary(0, 1000)
+    predictions = naive_bayes.predict(naive_bayes.dev_reviews)
+
+    correct_predictions = 0
+    for expected, actual in zip(predictions, naive_bayes.dev_labels):
+        if expected == actual:
+            correct_predictions += 1
+
+    print("Correct Predictions: " + str(correct_predictions))
+    print("Total Predictions: " + str(len(predictions)))
+    print("ACCURACY: %{:.2f}".format(correct_predictions/len(predictions)*100))
