@@ -1,8 +1,10 @@
-import time
 import sys
 import numpy as np
+import pickle
 from DataFormatter import DataFormatter
+from NaiveBayesClassifier import NaiveBayesClassifier
 data_formatter = DataFormatter()
+naive_bayes = NaiveBayesClassifier()
 
 
 if __name__ == '__main__':
@@ -21,24 +23,18 @@ if __name__ == '__main__':
         pos_reviews = data_formatter.clean_data(pos_reviews)
         neg_reviews = data_formatter.clean_data(neg_reviews)
 
-        # split data into 70% train, 30% test
+        # split data into 70% train, 15% dev, 15% test
         print("Splitting data...")
-        x_train, x_test, y_train, y_test = data_formatter.split_data(pos_reviews, neg_reviews)
-
-        # evenly split test into test and dev
-        # result: 70% train, 15% dev, 15% test
-        x_dev = x_test[:len(x_test)//2]
-        x_test = x_test[len(x_test)//2:]
-        y_dev = y_test[:len(y_test)//2]
-        y_test = y_test[len(y_test)//2:]
+        x_train, x_dev, x_test, y_train, y_dev, y_test = data_formatter.split_data(pos_reviews, neg_reviews)
 
         print("Saving...")
         data_formatter.save_as_npz(x_train, x_dev, x_test, y_train, y_dev, y_test)
         print("Saved!")
-        print("You split the data, please run again for the Naive Bayes classifier.")
+
+        print("Generating Dictionaries...")
+        pos_dict, neg_dict = data_formatter.generate_pos_neg_dict(x_train, y_train)
+        data_formatter.pickle_object(pos_dict, "pos_dict.pickle")
+        data_formatter.pickle_object(neg_dict, "neg_dict.pickle")
+
+        print("You saved the formatted data, please run again for the Naive Bayes classifier.")
         sys.exit()
-
-    train_reviews = data_files['x_train']
-    train_labels = data_files['y_train']
-
-
