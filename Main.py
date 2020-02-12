@@ -1,10 +1,8 @@
 import sys
 import numpy as np
-import pickle
 from DataFormatter import DataFormatter
 from NaiveBayesClassifier import NaiveBayesClassifier
 data_formatter = DataFormatter()
-naive_bayes = NaiveBayesClassifier()
 
 
 if __name__ == '__main__':
@@ -27,14 +25,31 @@ if __name__ == '__main__':
         print("Splitting data...")
         x_train, x_dev, x_test, y_train, y_dev, y_test = data_formatter.split_data(pos_reviews, neg_reviews)
 
-        print("Saving...")
+        # save to npz file
+        print("Saving data...")
         data_formatter.save_as_npz(x_train, x_dev, x_test, y_train, y_dev, y_test)
-        print("Saved!")
 
+        # generate dictionaries of positive and negative words
         print("Generating Dictionaries...")
         pos_dict, neg_dict = data_formatter.generate_pos_neg_dict(x_train, y_train)
+
+        # pickle the dictionaries
+        print("Saving Dictionaries...")
         data_formatter.pickle_object(pos_dict, "pos_dict.pickle")
         data_formatter.pickle_object(neg_dict, "neg_dict.pickle")
 
+        # ask user to run the code again for results
         print("You saved the formatted data, please run again for the Naive Bayes classifier.")
         sys.exit()
+
+    naive_bayes = NaiveBayesClassifier(data_files)
+    naive_bayes.generate_vocabulary(0, 1000)
+    print(len(naive_bayes.vocabulary))
+
+# generate pos dict
+# gnerate neg dict
+# generate sum of pos dict values
+# generate sum of neg dict values
+# generate unique vocabulay of combined lists
+
+
