@@ -1,9 +1,9 @@
 import sys
 import numpy as np
+import matplotlib.pyplot as plt
 from DataFormatter import DataFormatter
 from NaiveBayesClassifier import NaiveBayesClassifier
 data_formatter = DataFormatter()
-
 
 if __name__ == '__main__':
     # load the data from .npz file if it exists
@@ -46,14 +46,22 @@ if __name__ == '__main__':
     naive_bayes = NaiveBayesClassifier(data_files)
 
     # generate vocabulary of words
-    naive_bayes.generate_vocabulary(0, 1000)
-    predictions = naive_bayes.predict(naive_bayes.dev_reviews)
+    low_thresh = [0, 5, 10]
+    high_thresh = [50, 100, 1000]
 
-    correct_predictions = 0
-    for expected, actual in zip(predictions, naive_bayes.dev_labels):
-        if expected == actual:
-            correct_predictions += 1
+    # grid search
+    for low in low_thresh:
+        for high in high_thresh:
+            naive_bayes.generate_vocabulary(low, high)
 
-    print("Correct Predictions: " + str(correct_predictions))
-    print("Total Predictions: " + str(len(predictions)))
-    print("ACCURACY: %{:.2f}".format(correct_predictions/len(predictions)*100))
+            predictions = naive_bayes.predict(naive_bayes.dev_reviews)
+
+            correct_predictions = 0
+            for expected, actual in zip(predictions, naive_bayes.dev_labels):
+                if expected == actual:
+                    correct_predictions += 1
+            print("Low Threshold: {}".format(low))
+            print("High Threshold: {}".format(high))
+            print("Correct Predictions: {}".format(correct_predictions))
+            print("Total Predictions: {}".format(len(predictions)))
+            print("ACCURACY: %{:.2f}\n".format(correct_predictions/len(predictions)*100))

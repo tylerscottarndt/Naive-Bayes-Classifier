@@ -19,7 +19,7 @@ class DataFormatter:
         result = []
         for line in data_list:
             words = line.split(" ")
-            cleaned_words = [porter_stemmer.stem(token) for token in words if token not in stop_words]
+            cleaned_words = [token for token in words if token not in stop_words]
             cleaned_words[:] = [token for token in cleaned_words if token != "," and token != "." and token != ""]
             result.append(cleaned_words)
         return result

@@ -1,4 +1,5 @@
 import pickle
+import math
 
 
 class NaiveBayesClassifier:
@@ -39,8 +40,8 @@ class NaiveBayesClassifier:
         total_pos_words = self.__total_vocab_words_in_dict(self.pos_dict)
         total_neg_words = self.__total_vocab_words_in_dict(self.neg_dict)
         for line in data:
-            pos_probability = self.probability_of_pos
-            neg_probability = self.probability_of_neg
+            pos_probability = math.log(self.probability_of_pos)
+            neg_probability = math.log(self.probability_of_neg)
             for word in line:
                 pos_occurrence = 0
                 neg_occurrence = 0
@@ -48,8 +49,8 @@ class NaiveBayesClassifier:
                     pos_occurrence = self.pos_dict[word]
                 if word in self.neg_dict:
                     neg_occurrence = self.neg_dict[word]
-                pos_probability *= (pos_occurrence + 1) / (total_pos_words + len(self.vocabulary))
-                neg_probability *= (neg_occurrence + 1) / (total_neg_words + len(self.vocabulary))
+                pos_probability += math.log((pos_occurrence + 1) / (total_pos_words + len(self.vocabulary)))
+                neg_probability += math.log((neg_occurrence + 1) / (total_neg_words + len(self.vocabulary)))
             if pos_probability >= neg_probability:
                 predictions.append(1)
             else:
