@@ -54,6 +54,25 @@ if __name__ == '__main__':
     # optimal_hyperparams = naive_bayes.train_on_grid_search(low_thresh, high_thresh)
     # data_formatter.pickle_object(optimal_hyperparams, "optimal_hyperparams.pickle")
 
+    # unpickle optimized hyperparameters
     pickle_in = open("optimal_hyperparams.pickle", "rb")
     optimal_hyperparams = pickle.load(pickle_in)
     pickle_in.close()
+
+    # regenerate vocabulary for optimal parameters
+    naive_bayes.generate_vocabulary(optimal_hyperparams[0], optimal_hyperparams[1])
+
+    # run Naive Bayes classifier on test data
+    predictions = naive_bayes.predict(naive_bayes.test_reviews)
+    zipped = zip(predictions, naive_bayes.test_labels)
+
+    # calculate and print the accuracy of test results
+    correct = 0
+    for expected, actual in zipped:
+        if expected == actual:
+            correct += 1
+    accuracy = correct / len(predictions)*100
+
+    print("Correct Predictions: {}".format(correct))
+    print("Total Predictions: {}".format(len(predictions)))
+    print("ACCURACY: %{}".format(accuracy))
