@@ -14,6 +14,7 @@ class NaiveBayesClassifier:
         self.test_labels = data_files['y_test']
         self.probability_of_pos = len([i for i in self.train_labels if i == 1]) / len(self.train_labels)
         self.probability_of_neg = 1 - self.probability_of_pos
+        self.confidence_values = []
 
         pickle_in = open("pos_dict.pickle", "rb")
         self.pos_dict = pickle.load(pickle_in)
@@ -51,6 +52,7 @@ class NaiveBayesClassifier:
         return temp_dict
 
     def predict(self, data):
+        self.confidence_values = []
         predictions = []
         total_pos_words = self.__total_vocab_words_in_dict(self.pos_dict)
         total_neg_words = self.__total_vocab_words_in_dict(self.neg_dict)
@@ -70,6 +72,7 @@ class NaiveBayesClassifier:
                 predictions.append(1)
             else:
                 predictions.append(0)
+            self.confidence_values.append(round(abs(pos_probability - neg_probability), 4))
         return predictions
 
     def train_on_grid_search(self, low_thresh_vals, high_thresh_vals):

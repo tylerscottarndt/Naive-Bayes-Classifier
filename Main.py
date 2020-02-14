@@ -78,4 +78,23 @@ if __name__ == '__main__':
 
     print("Correct Predictions: {}".format(correct))
     print("Total Predictions: {}".format(len(predictions)))
-    print("ACCURACY: %{0:.2f}".format(accuracy))
+    print("ACCURACY: %{0:.2f}\n".format(accuracy))
+
+    # reviews with highest and lowest confidence values
+    confidence_values = naive_bayes.confidence_values
+    top_confidence_vals = sorted(zip(confidence_values, naive_bayes.test_reviews, predictions), reverse=True)[:5]
+    low_confidence_vals = sorted(zip(confidence_values, naive_bayes.test_reviews, predictions), reverse=False)[:5]
+
+    print("HIGHEST CONFIDENCE PREDICTIONS:")
+    print("===============================")
+    for val in top_confidence_vals:
+        print("Predicted Label: {}".format(val[2]))
+        print("Confidence: {}".format(val[0]))
+        print("Review: '{}'\n".format(" ".join(val[1])))
+
+    print("LOWEST CONFIDENCE PREDICTIONS:")
+    print("===============================")
+    for val in low_confidence_vals:
+        print("Predicted Label: {}".format(val[2]))
+        print("Confidence: {}".format(val[0]))
+        print("Review: '{}'\n".format(" ".join(val[1])))
