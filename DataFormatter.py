@@ -2,7 +2,6 @@ import numpy as np
 import sys
 import pickle
 from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
 from sklearn.model_selection import train_test_split
 
 stop_words = set(stopwords.words('english'))
@@ -15,7 +14,6 @@ class DataFormatter:
         return data_list
 
     def clean_data(self, data_list):
-        porter_stemmer = PorterStemmer()
         result = []
         for line in data_list:
             words = line.split(" ")

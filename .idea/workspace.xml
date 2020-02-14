@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="19324210-775e-4067-8140-96712d433d53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/DataFormatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataFormatter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NaiveBayesClassifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/NaiveBayesClassifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neg_dict.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/neg_dict.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos_dict.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/pos_dict.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_dev_test_files.npz" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+>>>>>>> master
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,33 +24,57 @@
     <session id="-629282329">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+<<<<<<< HEAD
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="4" />
+=======
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.opened" value="3" />
+>>>>>>> master
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+<<<<<<< HEAD
+          <entry key="py" value="8" />
+=======
           <entry key="py" value="7" />
+>>>>>>> master
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="4" />
+<<<<<<< HEAD
+          <entry key="Python" value="8" />
+=======
           <entry key="Python" value="7" />
+>>>>>>> master
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+<<<<<<< HEAD
+          <entry key="py" value="17023" />
+=======
           <entry key="py" value="14429" />
+>>>>>>> master
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
+          <entry key="Python" value="17023" />
+=======
           <entry key="Python" value="14429" />
+>>>>>>> master
         </counts>
       </usages-collector>
     </session>
@@ -51,8 +84,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="795">
+              <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+=======
             <state relative-caret-position="136">
               <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+>>>>>>> master
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -63,8 +101,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataFormatter.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="241">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+=======
             <state relative-caret-position="255">
               <caret line="22" column="102" selection-start-line="22" selection-start-column="102" selection-end-line="22" selection-end-column="102" />
+>>>>>>> master
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -75,10 +118,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NaiveBayesClassifier.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="257">
+              <caret line="90" column="69" selection-start-line="90" selection-start-column="69" selection-end-line="90" selection-end-column="69" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+                <marker date="1581641432815" expanded="true" signature="1667:1840" ph="..." />
+                <marker date="1581641432815" expanded="true" signature="4828:4834" ph="..." />
+=======
             <state relative-caret-position="753">
               <caret line="59" column="48" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+>>>>>>> master
               </folding>
             </state>
           </provider>
@@ -101,9 +153,13 @@
       <list>
         <option value="$PROJECT_DIR$/rt-polarity.neg.txt" />
         <option value="$PROJECT_DIR$/rt-polarity.pos.txt" />
+<<<<<<< HEAD
+=======
         <option value="$PROJECT_DIR$/NaiveBayesClassifier.py" />
+>>>>>>> master
         <option value="$PROJECT_DIR$/DataFormatter.py" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/NaiveBayesClassifier.py" />
       </list>
     </option>
   </component>
@@ -116,6 +172,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,7 +184,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,13 +245,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="NaiveBayesClassifier" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Naive-Bayes-Classifier" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NaiveBayesClassifier.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.DataFormatter" />
+      <item itemvalue="Python.NaiveBayesClassifier" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.NaiveBayesClassifier" />
         <item itemvalue="Python.DataFormatter" />
       </list>
     </recent_temporary>
@@ -224,14 +303,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.2614458" />
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45180723" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33373493" />
+=======
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.61084336" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.24698795" />
+>>>>>>> master
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
@@ -282,6 +367,12 @@
       </provider>
     </entry>
     <entry file="file:///Volumes/WININSTALL/Grad School/2019 WINTER/COMP 479 - Machine Learning/Homework/NLP-Sentiment-Analysis/NLP.py" />
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/scipy/constants/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="321" selection-start-line="321" selection-end-line="321" />
+=======
     <entry file="file://$PROJECT_DIR$/DataFormatter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -289,28 +380,54 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+>>>>>>> master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NaiveBayesClassifier.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="241">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+=======
         <state relative-caret-position="753">
           <caret line="59" column="48" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+>>>>>>> master
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/NaiveBayesClassifier.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="257">
+          <caret line="90" column="69" selection-start-line="90" selection-start-column="69" selection-end-line="90" selection-end-column="69" />
+=======
         <state relative-caret-position="136">
           <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+>>>>>>> master
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1581641432815" expanded="true" signature="1667:1840" ph="..." />
+            <marker date="1581641432815" expanded="true" signature="4828:4834" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> master
   </component>
 </project>
