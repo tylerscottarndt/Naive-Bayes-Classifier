@@ -29,17 +29,17 @@ class NaiveBayesClassifier:
         self.vocabulary = []
 
     def generate_vocabulary(self, lower_count_thresh, upper_count_thresh):
-        pos_vocab = []
-        neg_vocab = []
-        for key in self.pos_dict.keys():
-            if lower_count_thresh < self.pos_dict[key] < upper_count_thresh:
-                pos_vocab.append(key)
+        self.vocabulary = []
+        all_keys = set([key for key in self.pos_dict.keys()] + [key for key in self.neg_dict.keys()])
+        for key in all_keys:
+            sum = 0
+            if key in self.pos_dict.keys():
+                sum += self.pos_dict[key]
+            if key in self.neg_dict.keys():
+                sum += self.neg_dict[key]
 
-        for key in self.neg_dict.keys():
-            if lower_count_thresh < self.neg_dict[key] < upper_count_thresh:
-                neg_vocab.append(key)
-
-        self.vocabulary = set(pos_vocab + neg_vocab)
+            if lower_count_thresh < sum < upper_count_thresh:
+                self.vocabulary.append(key)
         self.pos_dict_truncated = self.__update_dictionary(self.pos_dict)
         self.neg_dict_truncated = self.__update_dictionary(self.neg_dict)
 

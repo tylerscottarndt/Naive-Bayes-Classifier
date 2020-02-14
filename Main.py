@@ -98,3 +98,32 @@ if __name__ == '__main__':
         print("Predicted Label: {}".format(val[2]))
         print("Confidence: {}".format(val[0]))
         print("Review: '{}'\n".format(" ".join(val[1])))
+
+    # find the most important features in each class
+    best_pos_feature = ""
+    best_neg_feature = ""
+    best_pos_feature_count = 0
+    best_neg_feature_count = 0
+
+    for key in naive_bayes.pos_dict_truncated.keys():
+        curr_key_count = naive_bayes.pos_dict_truncated[key]
+        if key in naive_bayes.neg_dict_truncated.keys():
+            curr_key_count = curr_key_count - naive_bayes.neg_dict_truncated[key]
+        if curr_key_count > best_pos_feature_count:
+            best_pos_feature = key
+            best_pos_feature_count = curr_key_count
+
+    for key in naive_bayes.neg_dict_truncated.keys():
+        curr_key_count = naive_bayes.neg_dict_truncated[key]
+        if key in naive_bayes.pos_dict.keys():
+            curr_key_count = curr_key_count - naive_bayes.pos_dict_truncated[key]
+        if curr_key_count > best_neg_feature_count:
+            best_neg_feature = key
+            best_neg_feature_count = curr_key_count
+
+    print("MOST IMPORTANT ATTRIBUTES:")
+    print("===========================")
+    print("Positive Class: {}".format(best_pos_feature))
+    print("{} More Appearances\n".format(best_pos_feature_count))
+    print("Negative Class: {}".format(best_neg_feature))
+    print("{} More Appearances\n".format(best_neg_feature_count))
