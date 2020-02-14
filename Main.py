@@ -42,22 +42,25 @@ if __name__ == '__main__':
         data_formatter.pickle_object(neg_dict, "neg_dict.pickle")
 
         # ask user to run the code again for results
-        print("You saved the formatted data, please run again for the Naive Bayes classifier.")
+        print("You saved the formatted data. Please run again to optimize the hyperparameters.")
         sys.exit()
 
     # instantiate naive_bayes object
     naive_bayes = NaiveBayesClassifier(data_files)
 
-    # grid search for optimal parameters
-    low_thresh = [0, 5, 10]
-    high_thresh = [50, 250, 1000]
-    # optimal_hyperparams = naive_bayes.train_on_grid_search(low_thresh, high_thresh)
-    # data_formatter.pickle_object(optimal_hyperparams, "optimal_hyperparams.pickle")
-
-    # unpickle optimized hyperparameters
-    pickle_in = open("optimal_hyperparams.pickle", "rb")
-    optimal_hyperparams = pickle.load(pickle_in)
-    pickle_in.close()
+    try:
+        # unpickle optimized hyperparameters
+        pickle_in = open("optimal_hyperparams.pickle", "rb")
+        optimal_hyperparams = pickle.load(pickle_in)
+        pickle_in.close()
+    except:
+        # grid search for optimal parameters
+        low_thresh = [0, 5, 10]
+        high_thresh = [50, 250, 1000]
+        optimal_hyperparams = naive_bayes.train_on_grid_search(low_thresh, high_thresh)
+        data_formatter.pickle_object(optimal_hyperparams, "optimal_hyperparams.pickle")
+        print("Hyperparameters optimized. Please run again for final test results.")
+        sys.exit()
 
     # regenerate vocabulary for optimal parameters
     naive_bayes.generate_vocabulary(optimal_hyperparams[0], optimal_hyperparams[1])
@@ -75,4 +78,4 @@ if __name__ == '__main__':
 
     print("Correct Predictions: {}".format(correct))
     print("Total Predictions: {}".format(len(predictions)))
-    print("ACCURACY: %{}".format(accuracy))
+    print("ACCURACY: %{0:.2f}".format(accuracy))

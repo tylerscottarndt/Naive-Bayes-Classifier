@@ -95,7 +95,7 @@ class NaiveBayesClassifier:
                     current_best_accuracy = curr_accuracy
                     best_param_combo = low, high
 
-        # self.__plot_grid_search(thresh_vals, errors)
+        self.__plot_grid_search(thresh_vals, errors)
         return best_param_combo
 
     def __plot_grid_search(self, thresh_vals, errors):
